@@ -28,5 +28,13 @@ module CommandKit
         end
       end
     end
+
+    module PlainText
+      module_function
+
+      def italics(string=nil)
+        string || ""
+      end
+    end
   end
 end
