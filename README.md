@@ -1,6 +1,6 @@
 # Wq
 
-A `wq` CLI to help you learn 500+ words you should know but probably don't and find inspirational quotes.
+`wq` is a CLI built with [command_kit](https://github.com/postmodern/command_kit.rb), to help you (me) learn ~500 words you should know but probably don't and find inspiration from a curated list of quotes.
 
 ## Usage
 
@@ -19,7 +19,7 @@ This is an example of the Gemini prompt template used:
 >
 > bacchanalian, badinage, bathos, bellwether, benevolent, blatant, blighting, bombastic, boorish, bucolic, burgeoning, byzantine
 
-The quotes data comes from [the dwyl/quotes repository](https://github.com/dwyl/quotes/blob/main/quotes.json). Run `bin/update-quotes` to update the data file and commit the changes.
+The quotes data source is [the dwyl/quotes repository](https://github.com/dwyl/quotes/blob/main/quotes.json). Run `bin/update-quotes` to update the data file and commit the changes.
 
 ## Releases
 
