@@ -7,5 +7,9 @@ gemspec
 
 gem "irb"
 gem "rake", "~> 13.0"
-
 gem "rspec", "~> 3.0"
+
+group :test do
+  gem "simplecov", require: false
+  gem "simplecov-cobertura"
+end
