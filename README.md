@@ -1,43 +1,31 @@
 # Wq
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wq`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-## Installation
-
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
+A `wq` CLI to help you learn 500+ words you should know but probably don't and find inspirational quotes.
 
 ## Usage
 
-TODO: Write usage instructions here
+Run `gem install wq`
+
+And then `wq`
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Run `bundle install` and then `bundle exec rspec` to run tests.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Only a list of words were extracted from the book "500 Words You Should Know" by Caroline Taggart. From there Google Gemini was used to generate the meanings per word in JSON format.
 
-## Contributing
+This is an example of the Gemini prompt template used:
+> Generate a JSON array of objects that provide the meanings for the words listed below. A word can have multiple meanings. Each meaning should include the definition, part of speech, example, and synonyms.
+>
+> bacchanalian, badinage, bathos, bellwether, benevolent, blatant, blighting, bombastic, boorish, bucolic, burgeoning, byzantine
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/javierjulio/wq. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/javierjulio/wq/blob/main/CODE_OF_CONDUCT.md).
+## Releases
 
-## License
+To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`.
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+## Resources
 
-## Code of Conduct
-
-Everyone interacting in the Wq project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/javierjulio/wq/blob/main/CODE_OF_CONDUCT.md).
+- https://www.datamuse.com/api/#md
+- https://github.com/agmmnn/datamuse-cli/blob/master/datamuse_cli/cli.py
+- https://github.com/dwyl/quotes/blob/main/quotes.json
+- https://github.com/Musheer360/QuoteSlate/blob/main/data/quotes.json
