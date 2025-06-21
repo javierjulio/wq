@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "json"
+require "uri"
+require "net/http"
+require "wq/data"
+
+SOURCE = "https://raw.githubusercontent.com/dwyl/quotes/refs/heads/main/quotes.json"
+
+response = Net::HTTP.get_response(URI.parse(SOURCE))
+
+unless response.is_a?(Net::HTTPSuccess)
+  puts "Failed to fetch from #{SOURCE}"
+  puts "HTTP Status: #{response.code} #{response.message}"
+  exit 1
+end
+
+# Since most quotes don't have other fields, only include `author` and `text`.
+json = JSON.parse(response.body, symbolize_names: true).map do |quote|
+  { author: quote[:author].strip, text: quote[:text].strip }
+end
+
+File.write(Wq::Data.quotes_path, [JSON.pretty_generate(json), $/].join)

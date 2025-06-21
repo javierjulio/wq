@@ -19,7 +19,7 @@ This is an example of the Gemini prompt template used:
 >
 > bacchanalian, badinage, bathos, bellwether, benevolent, blatant, blighting, bombastic, boorish, bucolic, burgeoning, byzantine
 
-The quotes data comes as-is from [the dwyl/quotes repository](https://github.com/dwyl/quotes/blob/main/quotes.json).
+The quotes data comes from [the dwyl/quotes repository](https://github.com/dwyl/quotes/blob/main/quotes.json). Run `bin/update-quotes` to update the data file and commit the changes.
 
 ## Releases
 
