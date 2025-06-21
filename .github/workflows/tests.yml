@@ -25,3 +25,28 @@ jobs:
       - run: bundle exec rspec
         env:
           COVERAGE: ""
+      - name: Rename coverage file by matrix run
+        run: mv coverage/coverage.xml coverage/coverage-ruby-${{ matrix.ruby }}.xml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-ruby-${{ matrix.ruby }}
+          path: coverage
+          if-no-files-found: error
+
+  upload_coverage:
+    runs-on: ubuntu-latest
+    name: Upload Coverage
+    needs:
+      - test_suite
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: coverage
+          pattern: coverage-ruby-*
+          merge-multiple: true
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage
+          fail_ci_if_error: true
