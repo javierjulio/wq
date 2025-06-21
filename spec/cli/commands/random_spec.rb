@@ -1,19 +1,19 @@
 require "wq/cli/commands/random"
 
 RSpec.describe Wq::CLI::Commands::Random do
-  describe "command_name" do
+  describe ".command_name" do
     it "returns 'random'" do
       expect(described_class.command_name).to eq("random")
     end
   end
 
-  describe "description" do
+  describe ".description" do
     it "returns the description" do
       expect(described_class.description).to eq("Show random word.")
     end
   end
 
-  describe "run" do
+  describe "#run" do
     it "outputs a random word with its meanings" do
       word = {
         word: "example",
