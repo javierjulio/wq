@@ -36,7 +36,8 @@ RSpec.describe Wq::CLI::Commands::Random do
         "noun",
         "",
         "  A representative form or pattern.",
-        "  This is an example sentence. MODEL, specimen",
+        "  \"This is an example sentence.\"",
+        "  \u{21BB} model, specimen",
         "",
         ""
       ].join($/)
