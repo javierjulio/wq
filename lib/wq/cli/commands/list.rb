@@ -18,7 +18,8 @@ module Wq
           end
 
           if words.empty?
-            puts colors.red("No words found starting with '#{letter.downcase}'.")
+            print_error("No words found starting with '#{letter.downcase}'.")
+            exit 1
           else
             words.each do |word|
               puts "#{word[:word]} - #{word[:meanings].first[:definition]}"
