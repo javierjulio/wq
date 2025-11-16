@@ -17,5 +17,7 @@ module Wq
 
     command_name "wq"
     version Wq::VERSION
+
+    command_aliases['quote'] = 'inspire'
   end
 end

@@ -12,4 +12,10 @@ RSpec.describe Wq::CLI do
       expect(described_class.version).to eq(Wq::VERSION)
     end
   end
+
+  describe ".command_aliases" do
+    it "includes 'quote' as an alias for 'inspire'" do
+      expect(described_class.command_aliases).to include("quote" => "inspire")
+    end
+  end
 end
