@@ -8,7 +8,7 @@ Run `gem install wq` then `wq` for the CLI.
 
 - `wq today` shows the word and quote of the day
 - `wq random` shows a random word
-- `wq inspire` shows a radom inspirational quote
+- `wq inspire` shows a random inspirational quote
 - `wq list [A-Z]` lists all or filtered words
 
 ## Development
