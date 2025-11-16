@@ -30,6 +30,10 @@ To release a new version, update the version number in `version.rb`, and then ru
 
 ## Resources
 
-- https://github.com/dwyl/quotes/blob/main/quotes.json
 - https://www.datamuse.com/api/#md
 - https://github.com/agmmnn/datamuse-cli/blob/master/datamuse_cli/cli.py
+
+```ruby
+response = Net::HTTP.get_response(URI.parse("https://api.datamuse.com/words?rel_jjb=ocean&max=20"))
+JSON.parse(response.body, symbolize_names: true)
+```
