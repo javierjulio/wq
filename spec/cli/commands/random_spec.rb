@@ -38,7 +38,7 @@ RSpec.describe Wq::CLI::Commands::Random do
         "  A representative form or pattern.",
         "  \"This is an example sentence.\"",
         "  \u{21BB} model, specimen",
-        "",
+        "  ",
         ""
       ].join($/)
       expect { subject.run }.to output(expected_output).to_stdout
