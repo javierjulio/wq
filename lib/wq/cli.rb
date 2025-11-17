@@ -1,4 +1,5 @@
 require "command_kit"
+require "command_kit/bug_report"
 require "command_kit/commands"
 require "command_kit/commands/auto_load"
 require "command_kit/colors"
@@ -14,10 +15,13 @@ module Wq
       namespace: "#{self}::Commands",
     )
     include CommandKit::Options::Version
+    include CommandKit::BugReport
 
     command_name "wq"
     version Wq::VERSION
 
     command_aliases['quote'] = 'inspire'
+
+    bug_report_url "https://github.com/javierjulio/wq/issues/new"
   end
 end
