@@ -26,7 +26,7 @@ The quotes data source is [the dwyl/quotes repository](https://github.com/dwyl/q
 
 ## Releases
 
-To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`.
+To release a new version, bump the version number in `version.rb`, run `bundle install`, and then `bundle exec rake release`.
 
 ## Resources
 
