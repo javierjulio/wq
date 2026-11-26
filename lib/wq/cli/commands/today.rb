@@ -29,7 +29,7 @@ module Wq
           puts ""
           indent(2) do
             puts "\"#{quote[:text]}\""
-            puts colors.gray("-— #{quote[:author]}")
+            puts colors.gray("-- #{quote[:author]}")
           end
         end
 

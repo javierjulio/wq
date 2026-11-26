@@ -50,7 +50,7 @@ RSpec.describe Wq::CLI::Commands::Today do
         "💬 Quote of the Day",
         "",
         "  \"This is an example.\"",
-        "  -— Example Author",
+        "  -- Example Author",
         ""
       ].join($/)
       expect { subject.run }.to output(expected_output).to_stdout
