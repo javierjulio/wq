@@ -15,15 +15,12 @@ RSpec.describe Wq::CLI::Commands::Inspire do
 
   describe "#run" do
     it "outputs a random sampled quote each run" do
-      srand 2
-
-      data = [{ text: "A", author: "B" }, { text: "C", author: "D" }].freeze
+      data = [{ text: "A", author: "B" }, { text: "C", author: "D" }]
       expect(Wq::Data).to receive(:quotes).twice.and_return(data)
+      expect(data).to receive(:sample).twice.and_return(data[0], data[1])
 
       expect { described_class.new.run }.to output(["", '  "A"', "  -- B", "", ""].join($/)).to_stdout
       expect { described_class.new.run }.to output(["", '  "C"', "  -- D", "", ""].join($/)).to_stdout
-
-      srand RSpec.configuration.seed
     end
 
     it "outputs a formatted quote text and author" do
