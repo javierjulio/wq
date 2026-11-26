@@ -54,5 +54,22 @@ RSpec.describe Wq::CLI::Commands::List do
         expect(error.status).to eq(1)
       end
     end
+
+    it "matches an uppercase letter" do
+      expect(Wq::Data).to receive(:words).and_return(words)
+
+      expect { subject.run("B") }.to output(["banana - Another fruit", ""].join($/)).to_stdout
+    end
+
+    ["ab", "1", "", "é"].each do |input|
+      it "rejects #{input.inspect} as not a single letter A-Z" do
+        expect(Wq::Data).not_to receive(:words)
+        expect(subject).to receive(:print_error).with("Invalid letter '#{input}'. Expected a single letter A-Z.")
+
+        expect { subject.run(input) }.to raise_error(SystemExit) do |error|
+          expect(error.status).to eq(1)
+        end
+      end
+    end
   end
 end

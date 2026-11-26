@@ -13,8 +13,11 @@ module Wq
         def run(letter=nil)
           if letter.nil?
             words = Wq::Data.words
-          else
+          elsif letter.match?(/\A[a-z]\z/i)
             words = Wq::Data.words.select { |w| w[:word].start_with?(letter.downcase) }
+          else
+            print_error("Invalid letter '#{letter}'. Expected a single letter A-Z.")
+            exit 1
           end
 
           if words.empty?
