@@ -24,7 +24,7 @@ module Wq
                 synonyms = meaning[:synonyms].compact.join(", ")
                 puts ["\u{21BB}", synonyms].join(" ") if !meaning[:synonyms].empty?
 
-                puts ""
+                puts
               end
             end
           end

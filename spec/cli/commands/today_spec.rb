@@ -45,7 +45,7 @@ RSpec.describe Wq::CLI::Commands::Today do
         "",
         "  A representative form or pattern.",
         "  \"This is an example sentence.\"",
-        "  ",
+        "",
         "",
         "💬 Quote of the Day",
         "",

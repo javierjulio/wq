@@ -20,7 +20,7 @@ module Wq
               meanings.each do |meaning|
                 puts colors.white(meaning[:definition])
                 puts colors.gray(['"', meaning[:example], '"'].join)
-                puts ""
+                puts
               end
             end
           end
