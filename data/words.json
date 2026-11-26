@@ -65,7 +65,7 @@
     "meanings": [
       {
         "definition": "With hands on the hips and elbows turned outward.",
-        "partOfSpeech": "adverb/adjective",
+        "partOfSpeech": "adverb",
         "example": "She stood with her arms akimbo, ready to argue her point.",
         "synonyms": ["hands on hips", "elbows out"]
       }
@@ -663,7 +663,7 @@
       },
       {
         "definition": "Infecting plants with blight (a disease).",
-        "partOfSpeech": "verb (present participle)",
+        "partOfSpeech": "verb",
         "example": "A fungus was blighting the tomato crops.",
         "synonyms": [
           "infecting",
@@ -1290,7 +1290,7 @@
     "meanings": [
       {
         "definition": "People who are considered to be especially well informed about a particular subject.",
-        "partOfSpeech": "noun, plural",
+        "partOfSpeech": "noun",
         "example": "The new art exhibition was highly praised by the cognoscenti.",
         "synonyms": [
           "experts",
