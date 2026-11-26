@@ -18,8 +18,9 @@ unless response.is_a?(Net::HTTPSuccess)
 end
 
 # Since most quotes don't have other fields, only include `author` and `text`.
+# The source has some duplicate quotes, so keep only the first of each text.
 json = JSON.parse(response.body, symbolize_names: true).map do |quote|
-  { author: quote[:author].strip, text: quote[:text].strip }
-end
+  { author: quote[:author].to_s.strip, text: quote[:text].to_s.strip }
+end.uniq { |quote| quote[:text] }
 
 File.write(Wq::Data.quotes_path, [JSON.pretty_generate(json), $/].join)
